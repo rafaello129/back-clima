@@ -1,5 +1,6 @@
 import { DataSource, Connection } from "typeorm";
 import { User } from "./entities";
+import { City } from "./entities/city.entity";
 
 interface Options {
     host: string;
@@ -32,6 +33,7 @@ export class PostgresDatabase {
             synchronize: true, // Solo para desarrollo, no recomendable en producción
             entities: [
                 User,
+                City
             ],
             extra: {
                 max: 10, 
